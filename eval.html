@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body onload="loadEval();">
+    <div class="page">
+        <form id="form">
+            <fieldset  id="required" onchange="this.style = 'background: none;'">
+                <legend>Which video do you think was different? (Please note that this may mean better or worse quality)</legend>
+                <input type="radio" name="choice" id="video1" value="1" /><label for="video1">Clip 1</label>
+                <input type="radio" name="choice" id="video2" value="2" /><label for="video2">Clip 2</label>
+                <input type="radio" name="choice" id="video3" value="3" /><label for="video3">Clip 3</label>
+                <input type="radio" name="choice" id="neither" value="0" /><label for="neither">All looked the same</label>
+            </fieldset>
+            <fieldset>
+                <legend>Why was your choice different from the other two? (tick all that apply)</legend>
+                <input type="checkbox" name="reason" id="colour" value="colour" />
+                    <label for="colour">Colour</label><br/>
+                <input type="checkbox" name="reason" id="detail" value="detail" />
+                    <label for="detail">Detail</label><br/>
+                <input type="checkbox" name="reason" id="smooth" value="smooth" />
+                    <label for="smooth">Movement smoothness</label><br/>
+                <input type="checkbox" name="reason" id="clear" value="clear" />
+                    <label for="clear">Clarity of picture</label><br/>
+                <input type="checkbox" name="reason" id="other" value="other" />
+                    <label for="other">Other:<input type="text" name="otherreason" id="otherreason" value="" /></label><br/>
+            </fieldset>
+            <input type="submit" id="submit" value="Progress to next video >>" onclick="return submitEval(this.form);" />
+        </form>
+    </div>
+</body>
+</html>

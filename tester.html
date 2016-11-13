@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <meta name="viewport" content="initial-scale=0.5">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body onload="playVid()">
+    <div id="video_container">
+       <video id="video2" onended="nextButton()" preload="none">
+       </video>
+    </div>
+    <div class="overlay">
+     <span id="overlay"></span>
+    </div>
+        <input id="button" type="button" value="Progress to next video >>" style="visibility: hidden;" onclick="playVid()" />    
+</body>
+</html>

@@ -1,0 +1,2 @@
+Header set MyHeader "Hello Joe. It took %D microseconds for Apache to serve this request."
+Header set Access-Control-Allow-Origin "*"

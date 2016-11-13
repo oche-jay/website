@@ -1,0 +1,298 @@
+body {
+  margin: 0px;
+}
+
+.main_body{
+z-index: 100;
+cursor: none;
+}
+
+video{
+  width: 100%;
+  height: 100%; 
+  cursor: none; 
+}
+
+.overlay{
+visibility: hidden; 
+position: absolute; 
+top: 90%;
+left: 45%; 
+color: #FFF; 
+text-align: center;
+font-size: 20px;
+background-color: rgba(221, 221, 221, 0.3);
+width: 160px;
+padding: 10px 0;
+z-index: 2;
+}
+
+.run-animation{
+animation-duration: 4s;
+animation-name: fadeAndScale;
+animation-timing-function: cubic-bezier(.71,.55,.62,2.57);
+}
+
+@keyframes fadeAndScale {
+  0% {
+    opacity: 0;
+    transform: scale(.9, .9);
+    visibility: visible;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1, 1);
+    }
+  75% {
+    opacity: 1;
+    transform: scale(1, 1);
+    }
+  100%{
+    opacity: 0;
+    transform: scale(.9, .9);
+  }
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #000;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: url("hand.png"), pointer;
+  transition: all 0.3s ease-out;
+  text-align: center;
+  background: #06D85F;
+}
+
+/*.ting{
+  visibility: hidden;
+}*/
+
+
+.rating:checked ~ .ting {
+    visibility: visible;
+ }
+
+.button:hover {
+  background: #06A86F;
+}
+
+.overlay2 {
+  visibility: hidden;
+  z-index: 3 ;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  cursor: url('arrows_white.png'), auto;
+}
+
+.overlay2:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  z-index: 101;
+  margin: 10% auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 40%;
+  min-height: 40%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  cursor: url('arrows.png'), auto;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+ 
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 100%;
+  overflow: auto;
+  margin-bottom: 20px
+}
+
+/*Ratings CSS from http://lea.verou.me/2011/08/accessible-star-rating-widget-with-pure-css/*/
+.rating {
+    float:left;
+    cursor: url(arrows.png), auto;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+
+.v_label, .v_input{
+  cursor: url('arrows.png'), pointer;  !important
+}
+
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor: url('arrows.png'), pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+    cursor: url('arrows.png'), pointer;
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+     cursor: url('arrows.png'), pointer;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    cursor: url('arrows.png'), pointer;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    cursor: url('arrows.png'), pointer;
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+    cursor: url('arrows.png'), pointer;
+}
+
+
+/*Edits for 4K Screen*/
+@media screen and (min-width: 1920px){
+
+video{
+  overflow: hidden;
+}
+
+.jumbotron{
+  transform: scale(2);
+  padding-top: 244px; 
+}
+
+.form_div {
+  transform: scale(3);
+  padding-top: 1044px; 
+}
+
+.goodbye_form {
+  transform: scale(3); 
+}
+
+option {
+  transform: scale(3);
+  font-size: 2em;
+}
+
+.navbar-fixed-top {
+  transform: scale(3);
+  margin-top: 20px;
+}
+
+.popup {
+  transform: scale(2);
+  font-size: 30px;
+  padding: 20px;
+  background: #fff;
+  min-height: 15%;
+  width: 30%;
+}
+
+.overlay{
+ font-size: 60px;
+ width: 480px;
+}
+
+.blocker{
+background: rgba(0,0,0,0.99);
+position: fixed; 
+top: 95%;
+left: 1%; 
+color: yellow; 
+width: 400px;
+height: 80px;
+padding: 10px 0;
+z-index: 2;
+}
+
+.blocker2{
+background: rgba(176,183,166,0.999999);
+position: fixed; 
+top: 85%;
+left: 85%; 
+color: yellow; 
+width: 400px;
+height: 200px;
+padding: 10px 0;
+z-index: 2;
+}
+
+
+.ui-tooltip-content{
+font-size: 60px;
+}
+
+}
+
+
